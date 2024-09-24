@@ -1,38 +1,39 @@
-Link: https://leetcode.com/problems/fill-missing-data/description/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata
+Link: https://leetcode.com/problems/change-data-type/description/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata
 
-Task: 2887. Fill Missing Data
+Task: 2886. Change Data Type
 
-DataFrame products
+DataFrame students
 +-------------+--------+
 | Column Name | Type   |
 +-------------+--------+
+| student_id  | int    |
 | name        | object |
-| quantity    | int    |
-| price       | int    |
+| age         | int    |
+| grade       | float  |
 +-------------+--------+
-Write a solution to fill in the missing value as 0 in the quantity column.
+Write a solution to correct the errors:
+
+The grade column is stored as floats, convert it to integers.
 
 The result format is in the following example.
 
  
 
 Example 1:
-Input:+-----------------+----------+-------+
-| name            | quantity | price |
-+-----------------+----------+-------+
-| Wristwatch      | None     | 135   |
-| WirelessEarbuds | None     | 821   |
-| GolfClubs       | 779      | 9319  |
-| Printer         | 849      | 3051  |
-+-----------------+----------+-------+
+Input:
+DataFrame students:
++------------+------+-----+-------+
+| student_id | name | age | grade |
++------------+------+-----+-------+
+| 1          | Ava  | 6   | 73.0  |
+| 2          | Kate | 15  | 87.0  |
++------------+------+-----+-------+
 Output:
-+-----------------+----------+-------+
-| name            | quantity | price |
-+-----------------+----------+-------+
-| Wristwatch      | 0        | 135   |
-| WirelessEarbuds | 0        | 821   |
-| GolfClubs       | 779      | 9319  |
-| Printer         | 849      | 3051  |
-+-----------------+----------+-------+
++------------+------+-----+-------+
+| student_id | name | age | grade |
++------------+------+-----+-------+
+| 1          | Ava  | 6   | 73    |
+| 2          | Kate | 15  | 87    |
++------------+------+-----+-------+
 Explanation: 
-The quantity for Wristwatch and WirelessEarbuds are filled by 0.
+The data types of the column grade is converted to int.

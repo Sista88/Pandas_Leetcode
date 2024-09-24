@@ -1,6 +1,6 @@
 import pandas as pd
 
 
-def selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:
-    var = employees.head(3)
-    return var
+def selectData(students: pd.DataFrame) -> pd.DataFrame:
+    df = students.query("student_id == 101")
+    return df[["name", "age"]]

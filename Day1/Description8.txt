@@ -1,46 +1,42 @@
-Link: https://leetcode.com/problems/rename-columns/description/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata
+Link: https://leetcode.com/problems/modify-columns/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata
 
-Task: 2885. Rename Columns
+Task: 2884. Modify Columns
 
-DataFrame students
+DataFrame employees
 +-------------+--------+
 | Column Name | Type   |
 +-------------+--------+
-| id          | int    |
-| first       | object |
-| last        | object |
-| age         | int    |
+| name        | object |
+| salary      | int    |
 +-------------+--------+
-Write a solution to rename the columns as follows:
+A company intends to give its employees a pay rise.
 
-id to student_id
-first to first_name
-last to last_name
-age to age_in_years
+Write a solution to modify the salary column by multiplying each salary by 2.
+
 The result format is in the following example.
 
  
 
 Example 1:
+
 Input:
-+----+---------+----------+-----+
-| id | first   | last     | age |
-+----+---------+----------+-----+
-| 1  | Mason   | King     | 6   |
-| 2  | Ava     | Wright   | 7   |
-| 3  | Taylor  | Hall     | 16  |
-| 4  | Georgia | Thompson | 18  |
-| 5  | Thomas  | Moore    | 10  |
-+----+---------+----------+-----+
+DataFrame employees
++---------+--------+
+| name    | salary |
++---------+--------+
+| Jack    | 19666  |
+| Piper   | 74754  |
+| Mia     | 62509  |
+| Ulysses | 54866  |
++---------+--------+
 Output:
-+------------+------------+-----------+--------------+
-| student_id | first_name | last_name | age_in_years |
-+------------+------------+-----------+--------------+
-| 1          | Mason      | King      | 6            |
-| 2          | Ava        | Wright    | 7            |
-| 3          | Taylor     | Hall      | 16           |
-| 4          | Georgia    | Thompson  | 18           |
-| 5          | Thomas     | Moore     | 10           |
-+------------+------------+-----------+--------------+
-Explanation: 
-The column names are changed accordingly.
++---------+--------+
+| name    | salary |
++---------+--------+
+| Jack    | 39332  |
+| Piper   | 149508 |
+| Mia     | 125018 |
+| Ulysses | 109732 |
++---------+--------+
+Explanation:
+Every salary has been doubled.

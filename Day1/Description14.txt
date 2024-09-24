@@ -1,19 +1,18 @@
-Link: https://leetcode.com/problems/method-chaining/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata
+Link: https://leetcode.com/problems/reshape-data-melt/description/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata
 
-Task: 2891. Method Chaining
+Task: 2890. Reshape Data: Melt
 
-DataFrame animals
+DataFrame report
 +-------------+--------+
 | Column Name | Type   |
 +-------------+--------+
-| name        | object |
-| species     | object |
-| age         | int    |
-| weight      | int    |
+| product     | object |
+| quarter_1   | int    |
+| quarter_2   | int    |
+| quarter_3   | int    |
+| quarter_4   | int    |
 +-------------+--------+
-Write a solution to list the names of animals that weigh strictly more than 100 kilograms.
-
-Return the animals sorted by weight in descending order.
+Write a solution to reshape the data so that each row represents sales data for a product in a specific quarter.
 
 The result format is in the following example.
 
@@ -21,33 +20,25 @@ The result format is in the following example.
 
 Example 1:
 
-Input: 
-DataFrame animals:
-+----------+---------+-----+--------+
-| name     | species | age | weight |
-+----------+---------+-----+--------+
-| Tatiana  | Snake   | 98  | 464    |
-| Khaled   | Giraffe | 50  | 41     |
-| Alex     | Leopard | 6   | 328    |
-| Jonathan | Monkey  | 45  | 463    |
-| Stefan   | Bear    | 100 | 50     |
-| Tommy    | Panda   | 26  | 349    |
-+----------+---------+-----+--------+
-Output: 
-+----------+
-| name     |
-+----------+
-| Tatiana  |
-| Jonathan |
-| Tommy    |
-| Alex     |
-+----------+
-Explanation: 
-All animals weighing more than 100 should be included in the results table.
-Tatiana's weight is 464, Jonathan's weight is 463, Tommy's weight is 349, and Alex's weight is 328.
-The results should be sorted in descending order of weight.
- 
-
-In Pandas, method chaining enables us to perform operations on a DataFrame without breaking up each operation into a separate line or creating multiple temporary variables. 
-
-Can you complete this task in just one line of code using method chaining?
+Input:
++-------------+-----------+-----------+-----------+-----------+
+| product     | quarter_1 | quarter_2 | quarter_3 | quarter_4 |
++-------------+-----------+-----------+-----------+-----------+
+| Umbrella    | 417       | 224       | 379       | 611       |
+| SleepingBag | 800       | 936       | 93        | 875       |
++-------------+-----------+-----------+-----------+-----------+
+Output:
++-------------+-----------+-------+
+| product     | quarter   | sales |
++-------------+-----------+-------+
+| Umbrella    | quarter_1 | 417   |
+| SleepingBag | quarter_1 | 800   |
+| Umbrella    | quarter_2 | 224   |
+| SleepingBag | quarter_2 | 936   |
+| Umbrella    | quarter_3 | 379   |
+| SleepingBag | quarter_3 | 93    |
+| Umbrella    | quarter_4 | 611   |
+| SleepingBag | quarter_4 | 875   |
++-------------+-----------+-------+
+Explanation:
+The DataFrame is reshaped from wide to long format. Each row represents the sales of a product in a quarter.

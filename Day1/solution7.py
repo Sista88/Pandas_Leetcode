@@ -1,6 +1,6 @@
 import pandas as pd
 
 
-def modifySalaryColumn(employees: pd.DataFrame) -> pd.DataFrame:
-    employees["salary"] = employees["salary"] * 2
-    return employees
+def dropMissingData(students: pd.DataFrame) -> pd.DataFrame:
+    students = students.dropna(subset="name")
+    return students

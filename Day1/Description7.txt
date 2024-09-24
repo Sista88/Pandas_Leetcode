@@ -1,41 +1,41 @@
-Link: https://leetcode.com/problems/modify-columns/description/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata 
+Link : https://leetcode.com/problems/drop-missing-data/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata 
 
-Task: 2884. Modify Columns
+Task: 2883. Drop Missing Data
 
-DataFrame employees
+DataFrame students
 +-------------+--------+
 | Column Name | Type   |
 +-------------+--------+
+| student_id  | int    |
 | name        | object |
-| salary      | int    |
+| age         | int    |
 +-------------+--------+
-A company intends to give its employees a pay rise.
+There are some rows having missing values in the name column.
 
-Write a solution to modify the salary column by multiplying each salary by 2.
+Write a solution to remove the rows with missing values.
 
 The result format is in the following example.
+
+ 
 
 Example 1:
 
 Input:
-DataFrame employees
-+---------+--------+
-| name    | salary |
-+---------+--------+
-| Jack    | 19666  |
-| Piper   | 74754  |
-| Mia     | 62509  |
-| Ulysses | 54866  |
-+---------+--------+
++------------+---------+-----+
+| student_id | name    | age |
++------------+---------+-----+
+| 32         | Piper   | 5   |
+| 217        | None    | 19  |
+| 779        | Georgia | 20  |
+| 849        | Willow  | 14  |
++------------+---------+-----+
 Output:
-+---------+--------+
-| name    | salary |
-+---------+--------+
-| Jack    | 39332  |
-| Piper   | 149508 |
-| Mia     | 125018 |
-| Ulysses | 109732 |
-+---------+--------+
-
-Explanation:
-Every salary has been doubled.
++------------+---------+-----+
+| student_id | name    | age |
++------------+---------+-----+
+| 32         | Piper   | 5   |
+| 779        | Georgia | 20  | 
+| 849        | Willow  | 14  | 
++------------+---------+-----+
+Explanation: 
+Student with id 217 havs empty value in the name column, so it will be removed.
